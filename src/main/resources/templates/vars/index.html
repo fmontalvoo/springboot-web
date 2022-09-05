@@ -5,8 +5,10 @@
 </head>
 <body>
 	<ul>
-		<li><a th:href="@{/vars/string/Hola mundo}"
-			target="_blank"> parametro </a></li>
+		<li><a th:href="@{/vars/string/} + 'Hola mundo'"
+			target="_blank"> variable </a></li>
+		<li><a th:href="@{/vars/mix-vars/} + ${'Hola mundo'} + '/' + ${7}"
+			target="_blank"> variables </a></li>
 	</ul>
 </body>
 </html>

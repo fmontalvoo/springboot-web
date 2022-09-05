@@ -21,4 +21,10 @@ public class EjemploVarsController {
 		return "vars/view";
 	}
 
+	@GetMapping("/mix-vars/{texto}/{numero}")
+	public String vars(@PathVariable String texto, @PathVariable Integer numero, Model model) {
+		model.addAttribute("res", "Texto: " + texto + "; Numero: " + numero);
+		return "vars/view";
+	}
+
 }
