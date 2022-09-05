@@ -5,9 +5,12 @@
 </head>
 <body>
 	<ul>
-		<li>
-			<a th:href="@{/params/string(texto='Hola mundo')}" target="_blank">link</a>
-		</li>
+		<li><a th:href="@{/params/string(texto='Hola mundo')}"
+			target="_blank"> parametro </a></li>
+		<li><a th:href="@{/params/mix-params(texto='Hola mundo', numero=7)}"
+			target="_blank"> parametros </a></li>
+		<li><a th:href="@{/params/mix-params-req(texto='Hola mundo', numero=7)}"
+			target="_blank"> parametros </a></li>
 	</ul>
 </body>
 </html>
