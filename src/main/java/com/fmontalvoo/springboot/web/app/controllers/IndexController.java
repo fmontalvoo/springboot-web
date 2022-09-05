@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 //import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -38,11 +39,14 @@ public class IndexController {
 
 	@GetMapping("listar")
 	public String listar(Model model) {
-		List<Usuario> usuarios = Arrays.asList(new Usuario("Frank", "Montalvo", "fgmo@mail.com"),
-				new Usuario("Fulano", "Detal", "fualno@mail.com"), new Usuario("Alan", "Brito", "alan@mail.com"));
-		model.addAttribute("usuarios", usuarios);
 		model.addAttribute("titulo", "Listado de usuarios");
 		return "listar";
+	}
+
+	@ModelAttribute("usuarios")
+	public List<Usuario> recuperarUsuarios() {
+		return Arrays.asList(new Usuario("Frank", "Montalvo", "fgmo@mail.com"),
+				new Usuario("Fulano", "Detal", "fualno@mail.com"), new Usuario("Alan", "Brito", "alan@mail.com"));
 	}
 
 //	@GetMapping({"/", "/home"})
